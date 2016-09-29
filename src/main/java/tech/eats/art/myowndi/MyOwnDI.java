@@ -26,6 +26,7 @@ public class MyOwnDI {
                 field.setAccessible(true);
                 field.set(facade, Decorator.decorate(service));
                 Facade typedfacade = (Facade) facade;
+                System.out.println("\n-----------------");
                 typedfacade.invokeService();
                 System.out.println("\n-----------------");
                 System.out.println("Facade: " + facade);
