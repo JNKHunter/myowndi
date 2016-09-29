@@ -24,7 +24,9 @@ public class MyOwnDI {
                 String fullName = packageName + "." + className;
                 Object service = Class.forName(fullName).newInstance();
                 field.setAccessible(true);
-                field.set(facade, service);
+                field.set(facade, Decorator.decorate(service));
+                Facade typedfacade = (Facade) facade;
+                typedfacade.invokeService();
                 System.out.println("\n-----------------");
                 System.out.println("Facade: " + facade);
             }else{
