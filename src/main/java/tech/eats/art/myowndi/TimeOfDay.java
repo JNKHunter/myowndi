@@ -14,7 +14,7 @@ public @interface TimeOfDay {
 
     DayTime value();
 
-    enum DayTime{
+    enum DayTime {
 
         MORNING, EVENING
 

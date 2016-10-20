@@ -16,7 +16,7 @@ public class Facade {
     public String toString() {
         return "Facade{" +
                 "service=" + service +
-                ", somethingElse='"  + '}';
+                ", somethingElse='" + '}';
     }
 
     public Service getService() {

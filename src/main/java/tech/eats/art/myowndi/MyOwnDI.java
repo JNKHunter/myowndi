@@ -11,10 +11,10 @@ public class MyOwnDI {
         Class<?> clazz = Class.forName("tech.eats.art.myowndi.Facade");
         Field[] fields = clazz.getDeclaredFields();
 
-        for (Field field : fields){
+        for (Field field : fields) {
             TimeOfDay myInject = field.getAnnotation(TimeOfDay.class);
 
-            if(myInject != null){
+            if (myInject != null) {
                 System.out.printf("Field %s is annotated with %s", field, myInject);
                 Object facade = clazz.newInstance();
                 Class<?> serviceType = field.getType();
@@ -30,7 +30,7 @@ public class MyOwnDI {
                 typedfacade.invokeService();
                 System.out.println("\n-------------------");
                 System.out.println("Facade: " + facade);
-            }else{
+            } else {
                 System.out.printf("Field %s is not annotated", field);
             }
         }
